@@ -1,0 +1,27 @@
+﻿<Application x:Class="OOOSeal.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:OOOSeal"
+             xmlns:viewM="clr-namespace:OOOSeal.MVVM.ViewModel"
+             xmlns:view="clr-namespace:OOOSeal.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+         <ResourceDictionary>
+             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextBlockTheme.xaml"/>
+                <ResourceDictionary Source="Theme/DatePickerTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+             
+             <DataTemplate DataType="{x:Type viewM:MainViewModel}">
+                 <view:MainView/>
+             </DataTemplate>
+             <DataTemplate DataType="{x:Type viewM:ReceiptProductsViewModel}">
+                 <view:ReceiptProductsView/>
+             </DataTemplate>
+             <DataTemplate DataType="{x:Type viewM:ShipmentProductsViewModel}">
+                 <view:ShipmentProductsView/>
+             </DataTemplate>
+         </ResourceDictionary>
+    </Application.Resources>
+</Application>
